@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Rollin’ Sweet</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #2a150a, #1b0f08);
+  color: white;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4.5rem;
+  color: #f6c77a;
+}
+
+.hero p {
+  opacity: 0.8;
+  margin-top: 10px;
+}
+
+/* SLIDES */
+.roll-slide {
+  height: 120vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+}
+
+/* CINNAMON ROLL */
+.roll {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: repeating-radial-gradient(
+    circle,
+    #c68642 0px,
+    #c68642 16px,
+    #8b5a2b 32px
+  );
+  opacity: 0;
+  transform: scale(0.6) rotate(-20deg);
+  animation: rollReveal 1.3s ease forwards;
+  animation-timeline: view();
+  animation-range: entry 30% cover 50%;
+  box-shadow:
+    inset 0 0 35px rgba(255,255,255,0.25),
+    0 35px 70px rgba(0,0,0,0.7);
+}
+
+/* TEXT */
+.text {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: textReveal 1s ease forwards;
+  animation-timeline: view();
+  animation-range: entry 40% cover 60%;
+}
+
+.text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+}
+
+/* PRICE + ORDER */
+.order-row {
+  display: flex;
+  gap: 22px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.price {
+  font-size: 1.4rem;
+  color: #f6c77a;
+}
+
+.order-link {
+  color: #f6c77a;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border 0.3s, opacity 0.3s;
+}
+
+.order-link:hover {
+  border-bottom: 1px solid #f6c77a;
+  opacity: 0.85;
+}
+
+/* DESCRIPTION — SLIDES FROM RIGHT */
+.desc {
+  margin-top: 14px;
+  max-width: 480px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  opacity: 0;
+  transform: translateX(90px);
+  animation: descReveal 1.2s ease forwards;
+  animation-timeline: view();
+  animation-range: entry 55% cover 75%;
+}
+
+/* FLAVOR COLORS */
+.pistachio { filter: hue-rotate(90deg); }
+.biscoff { filter: hue-rotate(10deg); }
+.nutella { filter: hue-rotate(-20deg); }
+.oreo { filter: grayscale(100%); }
+.classic { filter: none; }
+.caramel { filter: hue-rotate(35deg); }
+
+/* STORY */
+.story {
+  height: 100vh;
+  padding: 0 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: #f6c77a;
+}
+
+.story p {
+  font-size: 1.35rem;
+  line-height: 1.8;
+}
+
+.final-order {
+  margin-top: 40px;
+  align-self: center;
+  text-decoration: none;
+  background: linear-gradient(135deg,#ffb347,#ffcc33);
+  color: #2b1507;
+  padding: 16px 44px;
+  border-radius: 50px;
+  font-size: 1.15rem;
+  box-shadow: 0 0 35px rgba(255,200,100,0.6);
+  transition: transform 0.3s;
+}
+
+.final-order:hover {
+  transform: scale(1.1);
+}
+
+/* ANIMATIONS */
+@keyframes rollReveal {
+  to { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+@keyframes textReveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes descReveal {
+  to { opacity: 1; transform: translateX(0); }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <h1>Rollin’ Sweet</h1>
+  <p>Scroll to experience our cinnamon rolls</p>
+</section>
+
+<!-- PISTACHIO -->
+<section class="roll-slide">
+  <div class="roll pistachio"></div>
+  <div class="text">
+    <h2>Pistachio</h2>
+    <div class="order-row">
+      <span class="price">$4.00</span>
+      <a class="order-link" href="https://www.tiktok.com/@rollinsweet" target="_blank">Order on TikTok</a>
+    </div>
+    <p class="desc">
+      Rich pistachio cream melts inside warm cinnamon dough,
+      baked fresh for a smooth nutty unforgettable bite.
+    </p>
+  </div>
+</section>
+
+<!-- BISCOFF -->
+<section class="roll-slide">
+  <div class="roll biscoff"></div>
+  <div class="text">
+    <h2>Biscoff</h2>
+    <div class="order-row">
+      <span class="price">$3.50</span>
+      <a class="order-link" href="https://www.tiktok.com/@rollinsweet" target="_blank">Order on TikTok</a>
+    </div>
+    <p class="desc">
+      Creamy Biscoff spread melts perfectly into soft cinnamon layers,
+      creating a caramelized indulgent flavor.
+    </p>
+  </div>
+</section>
+
+<!-- NUTELLA -->
+<section class="roll-slide">
+  <div class="roll nutella"></div>
+  <div class="text">
+    <h2>Nutella</h2>
+    <div class="order-row">
+      <span class="price">$3.50</span>
+      <a class="order-link" href="https://www.tiktok.com/@rollinsweet" target="_blank">Order on TikTok</a>
+    </div>
+    <p class="desc">
+      Smooth Nutella flows through fluffy cinnamon dough,
+      blending chocolate richness with buttery softness.
+    </p>
+  </div>
+</section>
+
+<!-- OREO -->
+<section class="roll-slide">
+  <div class="roll oreo"></div>
+  <div class="text">
+    <h2>Oreo</h2>
+    <div class="order-row">
+      <span class="price">$3.50</span>
+      <a class="order-link" href="https://www.tiktok.com/@rollinsweet" target="_blank">Order on TikTok</a>
+    </div>
+    <p class="desc">
+      Crushed Oreo cookies folded into creamy cinnamon filling,
+      delivering a cookies and cream twist in every swirl.
+    </p>
+  </div>
+</section>
+
+<!-- CLASSIC -->
+<section class="roll-slide">
+  <div class="roll classic"></div>
+  <div class="text">
+    <h2>Classic</h2>
+    <div class="order-row">
+      <span class="price">$3.50</span>
+      <a class="order-link" href="https://www.tiktok.com/@rollinsweet" target="_blank">Order on TikTok</a>
+    </div>
+    <p class="desc">
+      Our signature cinnamon roll with soft dough,
+      warm spices and silky glaze baked to perfection.
+    </p>
+  </div>
+</section>
+
+<!-- CARAMEL -->
+<section class="roll-slide">
+  <div class="roll caramel"></div>
+  <div class="text">
+    <h2>Caramel</h2>
+    <div class="order-row">
+      <span class="price">$3.50</span>
+      <a class="order-link" href="https://www.tiktok.com/@rollinsweet" target="_blank">Order on TikTok</a>
+    </div>
+    <p class="desc">
+      Golden caramel slowly melts into warm cinnamon layers,
+      creating a deep buttery sweetness that lingers.
+    </p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story">
+  <p>
+    This business is made by a young entrepreneur looking for a future in cooking.<br><br>
+    By ordering you are not just getting a delicious snack but supporting my dreams.<br><br>
+    <strong>We are proud to say you are not just our customers but family.</strong>
+  </p>
+
+  <a class="final-order" href="https://www.tiktok.com/@rollinsweet" target="_blank">
+    Order on TikTok
+  </a>
+</section>
+
+</body>
+</html>
